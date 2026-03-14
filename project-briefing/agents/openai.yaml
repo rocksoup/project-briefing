@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Briefing"
+  short_description: "Fast project handoff summaries"
+  default_prompt: "Use $project-briefing to get me up to speed on this project in plain business language."
+
+policy:
+  allow_implicit_invocation: true
