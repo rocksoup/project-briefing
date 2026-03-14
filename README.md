@@ -117,11 +117,18 @@ The nested `project-briefing/` directory is the installable skill. The repo root
 
 Install the `project-briefing/` directory, not the entire repository root, into whatever skill directory your agent system uses.
 
+Recommended approach:
+
+- keep this repo cloned locally
+- treat `project-briefing/` as the canonical skill source
+- symlink agent-specific global skill locations back to that folder
+
 Examples:
 
-- Codex-style local skills: copy `project-briefing/` into `~/.codex/skills/`
-- Shared dotfiles or bootstrap setup: clone this repo and sync the `project-briefing/` folder into the local skills directory
-- Other agent systems: use the installable skill folder anywhere a skill is expected to be a directory containing `SKILL.md`
+- OpenAI Codex-style local skills: symlink `~/.codex/skills/project-briefing` to `project-briefing/`
+- Anthropic local skills on this machine: symlink `~/.claude/skills/project-briefing` to `project-briefing/`
+- Shared dotfiles or bootstrap setup: clone this repo and recreate the symlinks on each machine
+- Other agent systems: point them at the installable skill folder anywhere a skill is expected to be a directory containing `SKILL.md`
 
 The repo itself is for sharing, versioning, and iterating on the skill. The nested skill directory is the portable artifact.
 
